@@ -1,0 +1,16 @@
+credentials:
+    usernames:
+        user1:
+            name: User One
+            password: '$2b$12$HhDp1k27Wv7yQ5Jm7c1J5eJ9y8p3z8tW8f1v7m8w8l7W4t6f7W7W7'  # 示例密码：test123
+            role: Requester
+        admin:
+            name: Admin User
+            password: '$2b$12$Xc8G6d8m4T7y4k2w8W8d8h7J8m2J8n7C8t6g8M8M8'  # 示例密码：admin123
+            role: Admin
+cookie:
+    name: cookie_name
+    key: cookie_key
+    expiry_days: 30
+preauthorized:
+    emails: []
