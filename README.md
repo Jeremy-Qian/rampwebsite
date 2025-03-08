@@ -5,5 +5,5 @@
 
 # Streamlit
 
-Using :red[Streamlit] as website power.
-Visit [This page](rampion.streamlit.app) for the website.
+Using Streamlit as website power.
+Visit [This page](https://rampion.streamlit.app) for the website.
