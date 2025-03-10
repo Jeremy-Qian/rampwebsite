@@ -24,7 +24,24 @@ def login():
         else:
             st.error("Username or KEY error.")
     with st.popover("Fast Login(:blue[Beta])"):
-        pass
+        answer1 = st.secrets["julia1"]
+        answer2 = st.secrets["julia2"]
+        answer3 = st.secrets["julia3"]
+        st.write("Please answer this question.")
+        st.markdown(":red[*****Who invented the game See You?*****]")
+        answer = st.text_input("Your Answer:")
+        name = st.text_input("Your Name:")
+        if st.button("Log In"):
+            if answer.strip().lower() in [answer1,answer2,answer3] and name:
+                st.session_state.user = name
+                st.session_state.role = "Requester"
+                st.success("Successfully logged in!")
+                st.markdown(f":rainbow[Welcome, {st.session_state.user}!]")
+                with st.spinner("Redirecting to main page..."):
+                    sleep(1)
+                st.rerun()
+            else:
+                st.error("Name or Answer error.")
     with st.expander("How to get an account and KEY"):
         st.write("You can ask :blue[Jeremy] for one(works only in the ramp), or get a *****test account*****. Test account is limited, so getting a real account is recommended.")
         with st.popover("Get a test account"):
