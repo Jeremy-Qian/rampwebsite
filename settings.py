@@ -30,6 +30,6 @@ button {
                          icon="🔑")
             except KeyError:
                 st.toast("Sorry. :red[You don't have a key.] \
-Maybe it's because you logged in using the Fast Login method. You can try to use other methods of logging in.")
+Maybe it's because you logged in using the Fast Login method.")
     if st.button("Log Out"):
         logout()
