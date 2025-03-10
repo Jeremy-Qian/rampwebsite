@@ -83,9 +83,9 @@ def get_page_dict(account_pages, request_pages, test_pages, admin_pages, request
     if st.session_state.role in ["Requester", "Tester", "Admin"]:
         page_dict["Main Page"] = test_pages
     if st.session_state.role in ["Requester", "Admin"]:
-        page_dict["Request"] = request_pages
+        page_dict["Functions"] = request_pages
     else:
-        page_dict["Disabled"] = requestd_pages
+        page_dict["Functions"] = requestd_pages
     if st.session_state.role == "Admin":
         page_dict["Admin"] = admin_pages
     return page_dict
@@ -102,11 +102,12 @@ def main():
         pg = st.navigation([st.Page(login)])
 
     pg.run()
-    with st.sidebar:
-        messages = st.container(height=300)
-        if prompt := st.chat_input("Say something"):
-            messages.chat_message("user").write(prompt)
-            messages.chat_message("assistant").write(f"Echo: {prompt}")
+    if st.session_state.user:
+        with st.sidebar:
+            messages = st.container(height=300)
+            if prompt := st.chat_input("Say something"):
+                messages.chat_message("user").write(prompt)
+                messages.chat_message("assistant").write(f"Echo: {prompt}")
 
 if __name__ == "__main__":
     main()
