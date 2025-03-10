@@ -23,6 +23,8 @@ def login():
             st.rerun()
         else:
             st.error("Username or KEY error.")
+    with st.popover("Fast Login(:blue[Beta])"):
+        pass
     with st.expander("How to get an account and KEY"):
         st.write("You can ask :blue[Jeremy] for one(works only in the ramp), or get a *****test account*****. Test account is limited, so getting a real account is recommended.")
         with st.popover("Get a test account"):
