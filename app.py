@@ -49,7 +49,7 @@ def define_pages():
         icon=":material/help:",
     )
     request_2 = st.Page("request/request_2.py", title="Ramp Chat", icon=":material/chat:")
-    request_3 = st.Page("request/request_3.py", title="Comments", icon=":material/comment:")
+    request_3 = st.Page("request/request_3.py", title="Comments", icon=":material/forum:")
     test_1 = st.Page(
         "test/test_1.py",
         title="Welcome!",
@@ -105,9 +105,9 @@ def main():
     if st.session_state.user and st.session_state.role != "Tester":
         with st.sidebar:
             messages = st.container(height=300)
-            if prompt := st.chat_input("Say something"):
+            if prompt := st.chat_input("Message JereChat..."):
                 messages.chat_message("user").write(prompt)
-                messages.chat_message("assistant").write(f"Echo: {prompt}")
+                messages.chat_message("jerechat", avatar="icon_small.png").write(f"Echo: {prompt}")
     elif st.session_state.user and st.session_state.role == "Tester":
         with st.sidebar:
             messages = st.container(height=300)
