@@ -1,8 +1,23 @@
 import streamlit as st
+from streamlit_cookies_manager import EncryptedCookieManager
 from time import sleep
 
-# 初始化会话状态
-if 'user' not in st.session_state:
+# 初始化 EncryptedCookieManager
+cookies = EncryptedCookieManager(
+    prefix="my_app_",
+    # 你需要设置一个安全的密钥，用于加密 cookie
+    password="your_secret_password"
+)
+
+# 检查是否有有效的登录 cookie
+if not cookies.ready():
+    # 等待 cookie 加载完成
+    st.stop()
+
+if 'user' in cookies and 'role' in cookies:
+    st.session_state.user = cookies['user']
+    st.session_state.role = cookies['role']
+else:
     st.session_state.user = None
     st.session_state.role = None
 
@@ -16,6 +31,10 @@ def login():
         if username in users and users[username]["KEY"] == KEY:
             st.session_state.user = username
             st.session_state.role = users[username]["role"]
+            # 将用户信息存储到 cookie 中
+            cookies['user'] = username
+            cookies['role'] = users[username]["role"]
+            cookies.save()
             st.success("Successfully logged in!")
             st.markdown(f":rainbow[Welcome, {st.session_state.user}!]")
             with st.spinner("Redirecting to main page..."):
@@ -39,6 +58,12 @@ Your KEY is :
 def logout():
     st.session_state.user = None
     st.session_state.role = None
+    # 删除 cookie 中的用户信息
+    if 'user' in cookies:
+        del cookies['user']
+    if 'role' in cookies:
+        del cookies['role']
+    cookies.save()
     st.rerun()
 
 # 定义页面
