@@ -112,7 +112,7 @@ def main():
         with st.sidebar:
             messages = st.container(height=300)
             if prompt := st.chat_input("Not Availible"):
-                messages.chat_message("jerechat", avatar=icon_small.png).info(f"Sorry. JereChat assistant is not availible for test users.")
+                messages.chat_message("jerechat", avatar="icon_small.png").info(f"Sorry. JereChat assistant is not availible for test users.")
 
 if __name__ == "__main__":
     main()
