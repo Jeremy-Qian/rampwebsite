@@ -49,6 +49,7 @@ def define_pages():
         icon=":material/help:",
     )
     request_2 = st.Page("request/request_2.py", title="Ramp Chat", icon=":material/chat:")
+    request_3 = st.Page("request/request_3.py", title="Comments", icon=":material/comment:")
     test_1 = st.Page(
         "test/test_1.py",
         title="Welcome!",
@@ -68,7 +69,7 @@ def define_pages():
     )
     requestd_2 = st.Page("disabled/dis_2.py", title="Ramp Chat", icon=":material/chat:")
     account_pages = [logout_page, settings]
-    request_pages = [request_1, request_2]
+    request_pages = [request_1, request_2, request_3]
     requestd_pages = [requestd_1, requestd_2]
     test_pages = [test_1]
     admin_pages = [admin_1, admin_2]
