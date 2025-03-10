@@ -31,7 +31,7 @@ def login():
         st.markdown(":red[*****Who invented the game See You?*****]")
         answer = st.text_input("Your Answer:")
         name = st.text_input("Your Name:")
-        if st.button("Fast Log In", type="primary"):
+        if st.button("Fast Log In <kbd>Beta</kbd>", type="primary"):
             if answer.strip().lower() in [answer1,answer2,answer3] and name:
                 st.session_state.user = name
                 st.session_state.role = "Requester"
@@ -118,8 +118,6 @@ def main():
     page_dict = get_page_dict(account_pages, request_pages, test_pages, admin_pages, requestd_pages)
 
     if st.session_state.user:
-        # 显示注销按钮
-        st.sidebar.button("Log Out", on_click=logout)
         pg = st.navigation({"Account": account_pages} | page_dict)
     else:
         pg = st.navigation([st.Page(login)])
