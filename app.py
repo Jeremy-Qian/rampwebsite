@@ -44,8 +44,8 @@ def login():
                 st.error("Name or Answer error.")
     with st.expander("How to get an account and KEY"):
         st.markdown("""You can ask :blue[Jeremy] for one(:red[***works only in the ramp***]), or get a ***test account***. Test account is limited, so getting a real account is recommended.  
-Fast Login(:blue[Beta]) Note  
-Fast Login(Beta) enables you to log in with ease and speed. Simply answer a ramp question, enter your name and Hey Presto! You're logged in!""")
+> # Fast Login(:blue[Beta]) Note  
+> Fast Login(Beta) enables you to log in with ease and speed. Simply answer a ramp question, enter your name and Hey Presto! You're logged in!""")
         with st.popover("Get a test account"):
             users = st.secrets.get("users", {})
             st.markdown(":red[Warning: ] Your test account is not private. Please protect your data.")
