@@ -24,8 +24,12 @@ button {
         st.write(f"Your KEY:")
     with col2:
         if st.button("Click to reveal", type="tertiary"):
-            st.toast(f"""Your KEY is :     
- ***{users[st.session_state.user]['KEY']}***""",
-                     icon="🔑")
+            try:
+                st.toast(f"""Your KEY is :     
+     ***{users[st.session_state.user]['KEY']}***""",
+                         icon="🔑")
+            except KeyError:
+                st.toast("Sorry. :red[You don't have a key.] \
+Maybe it's because you logged in using the Fast Login method. You can try to use other methods of logging in.")
     if st.button("Log Out"):
         logout()
