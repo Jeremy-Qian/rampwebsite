@@ -82,7 +82,7 @@ def define_pages():
     admin_1 = st.Page(
         "admin/admin_1.py",
         title="Admin 1",
-        icon=":material/person_add:",
+        icon=":material/admin_panel_settings:",
     )
     admin_2 = st.Page("admin/admin_2.py", title="Admin 2", icon=":material/security:")
     requestd_1 = st.Page(
