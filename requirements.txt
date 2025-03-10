@@ -1,4 +1,3 @@
 streamlit
 streamlit_extras
 streamlit_chat
-streamlit_cookies_manager
