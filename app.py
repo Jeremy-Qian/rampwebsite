@@ -68,7 +68,7 @@ def define_pages():
         icon=":material/help:",
     )
     requestd_2 = st.Page("disabled/dis_2.py", title="Ramp Chat", icon=":material/chat:")
-    requestd_3 = st.Page("disabled/dis_3.py", title="Comments", icon=":material/comment:")
+    requestd_3 = st.Page("disabled/dis_3.py", title="Comments", icon=":material/forum:")
     account_pages = [logout_page, settings]
     request_pages = [request_1, request_2, request_3]
     requestd_pages = [requestd_1, requestd_2, requestd_3]
@@ -112,7 +112,7 @@ def main():
         with st.sidebar:
             messages = st.container(height=300)
             if prompt := st.chat_input("Not Availible"):
-                messages.chat_message("jerechat", avatar="icon_small.png").info(f"Sorry. JereChat assistant is not availible for test users.")
+                messages.chat_message("assistant").info(f"Sorry. JereChat assistant is not availible for test users.")
 
 if __name__ == "__main__":
     main()
