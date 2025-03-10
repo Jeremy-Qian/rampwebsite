@@ -31,7 +31,7 @@ def login():
         st.markdown(":red[*****Who invented the game See You?*****]")
         answer = st.text_input("Your Answer:")
         name = st.text_input("Your Name:")
-        if st.html('Fast Log In <div class="boxed">Beta</div>', type="primary"):
+        if st.button('Fast Log In', type="primary"):
             if answer.strip().lower() in [answer1,answer2,answer3] and name:
                 st.session_state.user = name
                 st.session_state.role = "Requester"
