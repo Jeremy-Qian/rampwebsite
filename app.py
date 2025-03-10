@@ -12,7 +12,6 @@ def login():
     username = st.text_input("Username")
     KEY = st.text_input("KEY", type="password")
     if st.button("Log In"):
-        # 假设这里从 secrets 获取用户信息
         users = st.secrets.get("users", {})
         if username in users and users[username]["KEY"] == KEY:
             st.session_state.user = username
@@ -42,14 +41,56 @@ def logout():
     st.session_state.role = None
     st.rerun()
 
-# 模拟定义页面函数
+# 定义页面
 def define_pages():
-    # 这里简单返回空列表，实际应根据需求定义页面
-    return [], [], [], [], []
+    logout_page = st.Page(logout, title="Log out", icon=":material/logout:")
+    settings = st.Page("settings.py", title="Settings", icon=":material/settings:")
+    request_1 = st.Page(
+        "request/request_1.py",
+        title="Who's coming to the ramp?",
+        icon=":material/help:",
+    )
+    request_2 = st.Page("request/request_2.py", title="Ramp Chat", icon=":material/chat:")
+    request_3 = st.Page("request/request_3.py", title="Comments", icon=":material/forum:")
+    test_1 = st.Page(
+        "test/test_1.py",
+        title="Welcome!",
+        icon=":material/scooter:",
+        default=True,
+    )
+    admin_1 = st.Page(
+        "admin/admin_1.py",
+        title="Admin 1",
+        icon=":material/person_add:",
+    )
+    admin_2 = st.Page("admin/admin_2.py", title="Admin 2", icon=":material/security:")
+    requestd_1 = st.Page(
+        "disabled/dis_1.py",
+        title="Who's coming to the ramp?",
+        icon=":material/help:",
+    )
+    requestd_2 = st.Page("disabled/dis_2.py", title="Ramp Chat", icon=":material/chat:")
+    requestd_3 = st.Page("disabled/dis_3.py", title="Comments", icon=":material/forum:")
+    account_pages = [logout_page, settings]
+    request_pages = [request_1, request_2, request_3]
+    requestd_pages = [requestd_1, requestd_2, requestd_3]
+    test_pages = [test_1]
+    admin_pages = [admin_1, admin_2]
 
-# 模拟获取页面字典函数
+    return account_pages, request_pages, test_pages, admin_pages, requestd_pages
+
+# 权限控制
 def get_page_dict(account_pages, request_pages, test_pages, admin_pages, requestd_pages):
-    return {}
+    page_dict = {}
+    if st.session_state.role in ["Requester", "Tester", "Admin"]:
+        page_dict["Main Page"] = test_pages
+    if st.session_state.role in ["Requester", "Admin"]:
+        page_dict["Functions"] = request_pages
+    else:
+        page_dict["Functions"] = requestd_pages
+    if st.session_state.role == "Admin":
+        page_dict["Admin"] = admin_pages
+    return page_dict
 
 # 主函数
 def main():
@@ -58,13 +99,13 @@ def main():
     page_dict = get_page_dict(account_pages, request_pages, test_pages, admin_pages, requestd_pages)
 
     if st.session_state.user:
-        # 模拟导航操作，这里假设 st.navigation 是自定义导航函数
-        st.write("You are logged in. Here is the main page.")
-        if st.button("Log Out"):
-            logout()
+        # 显示注销按钮
+        st.sidebar.button("Log Out", on_click=logout)
+        pg = st.navigation({"Account": account_pages} | page_dict)
     else:
-        login()
+        pg = st.navigation([st.Page(login)])
 
+    pg.run()
     if st.session_state.user and st.session_state.role != "Tester":
         with st.sidebar:
             messages = st.container(height=300)
