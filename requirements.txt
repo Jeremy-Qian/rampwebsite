@@ -5,3 +5,4 @@ deep_translator
 requests
 chatterbot
 chatterbot_corpus
+chatterbot_math
