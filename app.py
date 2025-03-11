@@ -128,6 +128,16 @@ def main():
         pg = st.navigation([st.Page(login)])
 
     pg.run()
+    st.markdown(
+    f'''
+        <style>
+            .sidebar .sidebar-content {{
+                width: 375px;
+            }}
+        </style>
+    ''',
+    unsafe_allow_html=True
+)
     if st.session_state.user and st.session_state.role != "Tester":
         with st.sidebar:
             messages = st.container(height=300)
