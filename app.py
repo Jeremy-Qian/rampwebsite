@@ -145,7 +145,7 @@ def main():
             if prompt := st.chat_input("Message JereChat..."):
                 messages.chat_message(st.session_state.user).write(prompt)
                 #messages.chat_message("user", avatar=":material/person:").write(prompt)
-                with st.spinner("Thinking..."):
+                with messages.spinner("Thinking..."):
                     resp = model.generate_response(prompt)
                 messages.chat_message("jerechat", avatar="icon_small.png").write(f"{resp}")
     elif st.session_state.user and st.session_state.role == "Tester":
