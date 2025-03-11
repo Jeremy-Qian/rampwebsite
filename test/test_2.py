@@ -1,7 +1,6 @@
 import streamlit as st
 from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
-from chatterbot.logic import MathAdapter
 
 # 创建 ChatBot 实例并添加 MathAdapter
 chatbot = ChatBot(
