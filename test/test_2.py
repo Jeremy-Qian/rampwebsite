@@ -36,3 +36,6 @@ for row in buttons:
             else:
                 # 追加按钮值到输入
                 st.session_state.input += button
+
+    # 添加垂直间距（可选）
+    st.write("")  # 空行用于分隔按钮行
