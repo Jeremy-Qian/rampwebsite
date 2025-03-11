@@ -1,5 +1,6 @@
 import streamlit as st
 from time import sleep
+from jerechat import JereChat_Model2_0
 
 # 初始化会话状态
 if 'user' not in st.session_state:
@@ -130,10 +131,11 @@ def main():
     if st.session_state.user and st.session_state.role != "Tester":
         with st.sidebar:
             messages = st.container(height=300)
+            model=JereChat_Model2_0()
             if prompt := st.chat_input("Message JereChat..."):
                 messages.chat_message(st.session_state.user).write(prompt)
                 #messages.chat_message("user", avatar=":material/person:").write(prompt)
-                messages.chat_message("jerechat", avatar="icon_small.png").write(f"Echo: {prompt}")
+                messages.chat_message("jerechat", avatar="icon_small.png").write(f"{model.generate_response(prompt)}")
     elif st.session_state.user and st.session_state.role == "Tester":
         with st.sidebar:
             messages = st.container(height=300)
