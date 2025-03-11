@@ -32,7 +32,8 @@ def login():
         answer = st.text_input("Your Answer:")
         name = st.text_input("Your Name:")
         if st.button('Fast Log In', type="primary"):
-            if answer.strip().lower() in [answer1,answer2,answer3] and name:
+            if answer.strip().lower() in [answer1,answer2,answer3] and \
+               name and name not in users:
                 st.session_state.user = name
                 st.session_state.role = "Requester"
                 st.success("Successfully logged in!")
@@ -41,7 +42,7 @@ def login():
                     sleep(1)
                 st.rerun()
             else:
-                st.error("Name or Answer error.")
+                st.error("Name or Answer error. Try using a different name.")
     with st.expander("How to get an account and KEY"):
         st.markdown("""You can ask :blue[Jeremy] for one(:red[***works only in the ramp***]), or get a ***test account***. Test account is limited, so getting a real account is recommended.  
 > ###### Fast Login(:blue[Beta]) Note  
