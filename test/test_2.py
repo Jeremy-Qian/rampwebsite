@@ -9,9 +9,9 @@ if "input" not in st.session_state:
 
 # 定义按钮的布局
 buttons = [
-    ["7", "8", "9", "/"],
-    ["4", "5", "6", "*"],
-    ["1", "2", "3", "-"],
+    ["7", "8", "9", "÷"],
+    ["4", "5", "6", "×"],
+    ["1", "2", "3", "−"],
     ["0", ".", "C", "+"],
     ["="]
 ]
@@ -27,7 +27,9 @@ for row in buttons:
             if button == "=":
                 try:
                     # 计算表达式的结果
-                    st.session_state.input = str(eval(st.session_state.input))
+                    # 替换符号为 Python 可识别的运算符
+                    expression = st.session_state.input.replace("÷", "/").replace("×", "*").replace("−", "-")
+                    st.session_state.input = str(eval(expression))
                 except Exception as e:
                     st.session_state.input = "错误"
             elif button == "C":
