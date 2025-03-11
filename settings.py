@@ -24,7 +24,8 @@ button {
         st.write(f"Your KEY:")
     with col2:
         try:
-            users[st.session_state.user]['KEY']
+            a = users[st.session_state.user]['KEY']
+            del a
         except:
             st.markdown(":red[Sorry. You don't have a key.]")
         else:
