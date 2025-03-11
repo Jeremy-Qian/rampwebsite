@@ -1,15 +1,14 @@
 import streamlit as st
 from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
-from chatterbot_math import MathAdapter
+from chatterbot.logic import MathAdapter
 
 # 创建 ChatBot 实例并添加 MathAdapter
 chatbot = ChatBot(
     "MathBot",
     logic_adapters=[
         {
-            "import_path": "chatterbot_math.MathAdapter",  # 使用 MathAdapter
-            "math_words": ["计算", "等于", "结果"],  # 自定义触发数学计算的词语
+            "import_path": "chatterbot.logic.MathematicalEvaluation",  # 使用内置的数学适配器
         },
         "chatterbot.logic.BestMatch",  # 添加其他适配器以支持更多功能
     ]
