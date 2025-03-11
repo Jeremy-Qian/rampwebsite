@@ -65,7 +65,7 @@ def logout():
 # 定义页面
 def define_pages():
     logout_page = st.Page(logout, title="Log out", icon=":material/logout:")
-    settings = st.Page("settings.py", title="Settings", icon=":material/settings:")
+    settings = st.Page("settings.py", title="Account Settings", icon=":material/manage_accounts:")
     request_1 = st.Page(
         "request/request_1.py",
         title="Who's coming to the ramp?",
