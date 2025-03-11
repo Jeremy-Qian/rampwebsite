@@ -32,6 +32,7 @@ def login():
         answer = st.text_input("Your Answer:")
         name = st.text_input("Your Name:")
         if st.button('Fast Log In', type="primary"):
+            users = st.secrets.get("users", {})
             if answer.strip().lower() in [answer1,answer2,answer3] and \
                name and name not in users:
                 st.session_state.user = name
