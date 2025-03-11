@@ -4,3 +4,4 @@ streamlit_chat
 deep_translator
 requests
 chatterbot
+en_core_web_sm
