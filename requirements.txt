@@ -3,3 +3,5 @@ streamlit_extras
 streamlit_chat
 deep_translator
 requests
+chatterbot
+chatterbot_corpus

@@ -1,43 +1,52 @@
 import streamlit as st
+from chatterbot import ChatBot
+from chatterbot.trainers import ChatterBotCorpusTrainer
+from chatterbot_math import MathAdapter
+
+# 创建 ChatBot 实例并添加 MathAdapter
+chatbot = ChatBot(
+    "MathBot",
+    logic_adapters=[
+        {
+            "import_path": "chatterbot_math.MathAdapter",  # 使用 MathAdapter
+            "math_words": ["计算", "等于", "结果"],  # 自定义触发数学计算的词语
+        },
+        "chatterbot.logic.BestMatch",  # 添加其他适配器以支持更多功能
+    ]
+)
+
+# 训练 ChatBot（可选）
+trainer = ChatterBotCorpusTrainer(chatbot)
+trainer.train("chatterbot.corpus.english")  # 训练英文语料库
 
 # 设置页面标题
-st.title("网格按钮计算器")
+st.title("聊天式计算器")
 
-# 初始化 session_state 用于存储输入和结果
-if "input" not in st.session_state:
-    st.session_state.input = ""
+# 初始化 session_state 用于存储聊天记录
+if "chat_history" not in st.session_state:
+    st.session_state.chat_history = []
 
-# 定义按钮的布局
-buttons = [
-    ["7", "8", "9", "÷"],
-    ["4", "5", "6", "×"],
-    ["1", "2", "3", "−"],
-    ["0", ".", "C", "+"],
-    ["="]
-]
+# 显示聊天记录
+for message in st.session_state.chat_history:
+    st.write(f"{message['role']}: {message['text']}")
 
-# 显示输入框
-st.text_input("输入/结果", st.session_state.input, disabled=True, key="display")
+# 用户输入
+user_input = st.text_input("输入数学表达式（例如：2 + 2）", key="user_input")
 
-# 使用 st.columns 创建网格布局
-for row in buttons:
-    cols = st.columns(len(row))  # 根据每行的按钮数量创建列
-    for i, button in enumerate(row):
-        if cols[i].button(button, use_container_width=True):
-            if button == "=":
-                try:
-                    # 计算表达式的结果
-                    # 替换符号为 Python 可识别的运算符
-                    expression = st.session_state.input.replace("÷", "/").replace("×", "*").replace("−", "-")
-                    st.session_state.input = str(eval(expression))
-                except Exception as e:
-                    st.session_state.input = "错误"
-            elif button == "C":
-                # 清空输入
-                st.session_state.input = ""
-            else:
-                # 追加按钮值到输入
-                st.session_state.input += button
+# 处理用户输入
+if st.button("发送"):
+    if user_input:
+        # 将用户输入添加到聊天记录
+        st.session_state.chat_history.append({"role": "你", "text": user_input})
 
-    # 添加垂直间距（可选）
-    st.write("")  # 空行用于分隔按钮行
+        # 获取 ChatBot 的回复
+        response = chatbot.get_response(user_input)
+
+        # 将 ChatBot 的回复添加到聊天记录
+        st.session_state.chat_history.append({"role": "计算器", "text": response})
+
+        # 清空输入框
+        st.session_state.user_input = ""
+
+# 重新渲染页面以显示更新后的聊天记录
+st.experimental_rerun()
