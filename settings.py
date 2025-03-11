@@ -1,8 +1,8 @@
 #settings.py
 import streamlit as st
 from streamlit_card import card 
-st.header("Settings Page")
-st.write("This is the settings page.")
+st.header("Your Account")
+st.write(f"Hello, {st.session_state.user}!")
 def logout():
     st.session_state.user = None
     st.session_state.role = None
