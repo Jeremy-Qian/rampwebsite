@@ -7,7 +7,7 @@ def logout():
     st.session_state.user = None
     st.session_state.role = None
     st.rerun()
-with st.popover("My Account"):
+with st.popover("Stuff about my account"):
     st.markdown("""
 <style>
 button {
@@ -23,13 +23,18 @@ button {
     with col1:
         st.write(f"Your KEY:")
     with col2:
-        if st.button("Click to reveal", type="tertiary"):
-            try:
-                st.toast(f"""Your KEY is :     
-     ***{users[st.session_state.user]['KEY']}***""",
-                         icon="🔑")
-            except KeyError:
-                st.toast("Sorry. :red[You don't have a key.] \
-Maybe it's because you logged in using the Fast Login method.")
+        try:
+            users[st.session_state.user]['KEY']
+        except:
+            st.markdown(":red[Sorry. You don't have a key.]")
+        else:
+            if st.button("Click to reveal", type="tertiary"):
+                try:
+                    st.toast(f"""Your KEY is :     
+         ***{users[st.session_state.user]['KEY']}***""",
+                             icon="🔑")
+                except KeyError:
+                    st.toast("Sorry. :red[You don't have a key.] \
+    Maybe it's because you logged in using the Fast Login method.")
     if st.button("Log Out"):
         logout()
