@@ -82,6 +82,11 @@ def define_pages():
         icon=":material/scooter:",
         default=True,
     )
+    test_2 = st.Page(
+        "test/test_2.py",
+        title="Calculator",
+        icon=":material/passkey:",
+    )
     admin_1 = st.Page(
         "admin/admin_1.py",
         title="Admin 1",
@@ -98,7 +103,7 @@ def define_pages():
     account_pages = [logout_page, settings]
     request_pages = [request_1, request_2, request_3]
     requestd_pages = [requestd_1, requestd_2, requestd_3]
-    test_pages = [test_1]
+    test_pages = [test_1,test_2]
     admin_pages = [admin_1, admin_2]
 
     return account_pages, request_pages, test_pages, admin_pages, requestd_pages
