@@ -4,9 +4,10 @@ st.header("Website Comments")
 
 # Link to GitHub issues
 st.markdown("""
-### Report Bugs or Suggestions！
-
-If you encounter any bugs or have suggestions for improvements, please feel free to [report them on GitHub](URL_ADDRESSIf you encounter any bugs or have suggestions for improvements, please feel free to [report them on GitHub](https://github.com/Jeremy-Qian/rampwebsite/issues).
+### Report Bugs or Suggestions!  
+> Change date: 2023-08-25
+> Version: 1.0.1
+> This website is still under development. If you encounter any bugs or have suggestions for improvements, please feel free to [report them on GitHub](https://github.com/Jeremy-Qian/rampwebsite/issues).
 
 - **Found a bug?** If the issue is serious, please report it to us!  
 - **Have suggestions?** We'd love to hear from you!  
