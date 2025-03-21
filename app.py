@@ -57,7 +57,7 @@ def login():
 ***tester***  
 Your KEY is :     
  ***{users['tester']['KEY']}***""",
-                     icon="🔑")
+                     icon=":material/account:")
 
 # 注销函数
 def logout():
@@ -84,7 +84,7 @@ def define_pages():
     )
     test_2 = st.Page(
         "test/test_2.py",
-        title="Calculator(:red[Deprecated])",
+        title="Calculator",
         icon=":material/calculate:",
     )
     admin_1 = st.Page(
