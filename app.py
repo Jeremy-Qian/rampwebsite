@@ -84,8 +84,8 @@ def define_pages():
     )
     test_2 = st.Page(
         "test/test_2.py",
-        title="Calculator",
-        icon=":material/passkey:",
+        title="Calculator(:red[Deprecated])",
+        icon=":material/calculate:",
     )
     admin_1 = st.Page(
         "admin/admin_1.py",

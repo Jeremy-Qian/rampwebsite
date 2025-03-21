@@ -1,50 +1,32 @@
 import streamlit as st
-from chatterbot import ChatBot
-from chatterbot.trainers import ChatterBotCorpusTrainer
 
-# 创建 ChatBot 实例并添加 MathAdapter
-chatbot = ChatBot(
-    "MathBot",
-    logic_adapters=[
-        {
-            "import_path": "chatterbot.logic.MathematicalEvaluation",  # 使用内置的数学适配器
-        },
-        "chatterbot.logic.BestMatch",  # 添加其他适配器以支持更多功能
-    ]
-)
+st.warning("This page is deprecated. It will be removed in the future.")
 
-# 训练 ChatBot（可选）
-trainer = ChatterBotCorpusTrainer(chatbot)
-trainer.train("chatterbot.corpus.english")  # 训练英文语料库
-
-# 设置页面标题
-st.title("聊天式计算器")
-
-# 初始化 session_state 用于存储聊天记录
-if "chat_history" not in st.session_state:
-    st.session_state.chat_history = []
-
-# 显示聊天记录
-for message in st.session_state.chat_history:
-    st.write(f"{message['role']}: {message['text']}")
-
-# 用户输入
-user_input = st.text_input("输入数学表达式（例如：2 + 2）", key="user_input")
-
-# 处理用户输入
-if st.button("发送"):
-    if user_input:
-        # 将用户输入添加到聊天记录
-        st.session_state.chat_history.append({"role": "你", "text": user_input})
-
-        # 获取 ChatBot 的回复
-        response = chatbot.get_response(user_input)
-
-        # 将 ChatBot 的回复添加到聊天记录
-        st.session_state.chat_history.append({"role": "计算器", "text": response})
-
-        # 清空输入框
-        st.session_state.user_input = ""
-
-# 重新渲染页面以显示更新后的聊天记录
-st.experimental_rerun()
+st.markdown("""
+# Welcome to the calculator!
+""")
+# 定义计算器函数
+def calculate(expression):
+    """
+    This function evaluates the given mathematical expression and returns the result.
+    Parameters:
+    - expression (str): The mathematical expression to be evaluated.
+    Returns:
+    - float: The result of the evaluated expression.
+    """
+    try:
+        result = eval(expression)
+        return result
+    except Exception as e:
+        st.error(f"Error: {e}")
+        st.stop()   
+        
+# 获取用户输入
+expression = st.text_input("Enter an expression:")
+# 计算结果并显示
+if st.button("Calculate"):
+    if not expression:
+        st.warning("Please enter an expression.")
+        st.stop()
+    result = calculate(expression)
+    st.write("Result:", result)
