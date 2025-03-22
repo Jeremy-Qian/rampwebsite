@@ -39,3 +39,8 @@ button {
     Maybe it's because you logged in using the Fast Login method.")
     if st.button("Log Out"):
         logout()
+
+card(
+    title="Log Out",
+    text="Log out of your account",
+)
