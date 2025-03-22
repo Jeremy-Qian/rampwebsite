@@ -9,6 +9,7 @@ st.markdown("""
 > Version: 1.0.2
 > This website is still under development. If you encounter any bugs or have suggestions for improvements, please feel free to [report them on GitHub](https://github.com/Jeremy-Qian/rampwebsite/issues).
 > You can view the [source code](https://github.com/Jeremy-Qian/rampwebsite) on our GitHub repository.  
+> You can see our other projects on [GitHub](https://github.com/Jeremy-Qian)
 
 ##### Report Issues
 - **Found a bug?** If the issue is serious, please report it to us!  
