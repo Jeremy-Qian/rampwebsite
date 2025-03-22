@@ -23,7 +23,7 @@ You can contact us via email:
 
 Or start an issue on GitHub.
 To start an issue, click [here](https://github.com/Jeremy-Qian/rampwebsite/issues).  
-Note:   
+###### Note:   
 :red[You have to login to GitHub to start an issue. If you don't have a GitHub account, you can create one for free. Or you can just send an email to us. Thank you!]
 """)
 
