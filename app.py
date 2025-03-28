@@ -25,7 +25,7 @@ def login():
             st.rerun()
         else:
             st.error("Username or KEY error.")
-    with st.popover("Fast Login(:blue-badge[Beta])"):
+    with st.popover("Fast Login:blue-badge[Beta]"):
         answer1 = st.secrets["julia1"]
         answer2 = st.secrets["julia2"]
         answer3 = st.secrets["julia3"]
@@ -48,7 +48,7 @@ def login():
                 st.error("Name or Answer error. Try using a different name.")
     with st.expander("How to get an account and KEY"):
         st.markdown("""You can ask :blue[Jeremy] for one(:red[***works only in the ramp***]), or get a ***test account***. Test account is limited, so getting a real account is recommended.  
-> ###### Fast Login(:blue[Beta]) Note  
+> ###### Fast Login Note :blue-badge[Beta]
 > Fast Login(Beta) enables you to log in with ease and speed. Simply answer a ramp question, enter your name and Hey Presto! You're logged in!""")
         with st.popover("Get a test account"):
             users = st.secrets.get("users", {})
@@ -58,7 +58,7 @@ def login():
 ***tester***  
 Your KEY is :     
  ***{users['tester']['KEY']}***""",
-                     icon=":material/account:")
+                     icon=":material/passkey:")
 
 # 注销函数
 def logout():
