@@ -134,8 +134,8 @@ def main():
 
     st.markdown(
         f'''
-        <a href="request_3" target="_self">
-            <img src="data:image/gif;base64,{data_url}" alt="cat gif" href=>
+        <a href="request_3" target="_self" onclick="event.preventDefault(); window.location.href='request_3';">
+            <img src="data:image/gif;base64,{data_url}" alt="cat gif">
         </a>
         ''',
         unsafe_allow_html=True,
