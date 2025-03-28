@@ -127,13 +127,13 @@ def main():
     st.title(":rainbow[Ramp Website]")
     account_pages, request_pages, test_pages, admin_pages, requestd_pages = define_pages()
     page_dict = get_page_dict(account_pages, request_pages, test_pages, admin_pages, requestd_pages)
-    file_ = open("banner_new.gif", "rb")
+    file_ = open("banner_new_slow.gif", "rb")
     contents = file_.read()
     data_url = base64.b64encode(contents).decode("utf-8")
     file_.close()
 
     st.markdown(
-        f'<img src="data:image/gif;base64,{data_url}" alt="Hello There!  Welcome to the Ramp!" style="width:100vw; max-width:100%; position:relative; left:50%; right:50%; margin-left:-50vw; margin-right:-50vw;">',
+        f'<img src="data:image/gif;base64,{data_url}" alt="Hello There!  Welcome to the Ramp!" style="width:100vw; height:100vh; object-fit: cover; position: fixed; top: 0; left: 0; right: 0; bottom: 0;">',
         unsafe_allow_html=True,
     )
     if st.session_state.user:
