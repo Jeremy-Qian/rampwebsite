@@ -1,6 +1,7 @@
 import streamlit as st
 from time import sleep
 from jerechat import JereChat_Model2_0
+import base64
 
 # 初始化会话状态
 if 'user' not in st.session_state:
@@ -126,7 +127,16 @@ def main():
     st.title(":rainbow[Ramp Website]")
     account_pages, request_pages, test_pages, admin_pages, requestd_pages = define_pages()
     page_dict = get_page_dict(account_pages, request_pages, test_pages, admin_pages, requestd_pages)
+    """### gif from local file"""
+    file_ = open("banner.gif", "rb")
+    contents = file_.read()
+    data_url = base64.b64encode(contents).decode("utf-8")
+    file_.close()
 
+    st.markdown(
+        f'<img src="data:image/gif;base64,{data_url}" alt="cat gif">',
+        unsafe_allow_html=True,
+    )
     if st.session_state.user:
         pg = st.navigation({"Account": account_pages} | page_dict)
     else:
