@@ -133,7 +133,7 @@ def main():
     file_.close()
 
     st.markdown(
-        f'<img src="data:image/gif;base64,{data_url}" alt="Hello There!  Welcome to the Ramp!" style="width:100%;">',
+        f'<img src="data:image/gif;base64,{data_url}" alt="Hello There!  Welcome to the Ramp!" style="width:100vw; max-width:100%; position:relative; left:50%; right:50%; margin-left:-50vw; margin-right:-50vw;">',
         unsafe_allow_html=True,
     )
     if st.session_state.user:
