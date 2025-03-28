@@ -133,7 +133,11 @@ def main():
     file_.close()
 
     st.markdown(
-        f'<img src="data:image/gif;base64,{data_url}" alt="cat gif">',
+        f'''
+        <a href="request_3" target="_self">
+            <img src="data:image/gif;base64,{data_url}" alt="cat gif" href=>
+        </a>
+        ''',
         unsafe_allow_html=True,
     )
     if st.session_state.user:
