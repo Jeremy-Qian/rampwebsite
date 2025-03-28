@@ -25,7 +25,7 @@ def login():
             st.rerun()
         else:
             st.error("Username or KEY error.")
-    with st.popover("Fast Login(:blue[Beta])"):
+    with st.popover("Fast Login(:blue-badge[Beta])"):
         answer1 = st.secrets["julia1"]
         answer2 = st.secrets["julia2"]
         answer3 = st.secrets["julia3"]
@@ -133,7 +133,7 @@ def main():
     file_.close()
 
     st.markdown(
-        f'<img src="data:image/gif;base64,{data_url}" alt="Hello There!  Welcome to the Ramp!" style="width:100vw; height:100vh; object-fit: cover; position: fixed; top: 0; left: 0; right: 0; bottom: 0;">',
+        f'<img src="data:image/gif;base64,{data_url}" alt="Hello There!  Welcome to the Ramp!" ',
         unsafe_allow_html=True,
     )
     if st.session_state.user:
