@@ -127,7 +127,6 @@ def main():
     st.title(":rainbow[Ramp Website]")
     account_pages, request_pages, test_pages, admin_pages, requestd_pages = define_pages()
     page_dict = get_page_dict(account_pages, request_pages, test_pages, admin_pages, requestd_pages)
-    """### gif from local file"""
     file_ = open("banner.gif", "rb")
     contents = file_.read()
     data_url = base64.b64encode(contents).decode("utf-8")
