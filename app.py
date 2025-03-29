@@ -145,17 +145,14 @@ def main():
     else:
         pg = st.navigation([st.Page(login)])
 
+    hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            </style>
+            """
+    st.markdown(hide_streamlit_style, unsafe_allow_html=True)
     pg.run()
-    st.markdown(
-    f'''
-        <style>
-            .sidebar .sidebar-content {{
-                width: 375px;
-            }}
-        </style>
-    ''',
-    unsafe_allow_html=True
-)
     if st.session_state.user and st.session_state.role != "Tester":
         with st.sidebar:
             messages = st.container(height=300)
