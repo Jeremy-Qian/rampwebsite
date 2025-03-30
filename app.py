@@ -81,7 +81,7 @@ body {{
 #superlongscroll {{
     clear: both;
     width: 100%;
-    height: 10000px;
+    height: 100000px;
 }}
 #footer {{
     clear: both;
