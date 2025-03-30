@@ -18,7 +18,7 @@ file_.close()
 
 # html code
 html_code = f"""
-<div id="container">container
+<div id="container">
 <div id="banner">
     <a href="https://contactus.streamlit.app">
         <img src="data:image/gif;base64,{data_url}" alt="Error showing banner(banner.gif). If you believe that this is an error, please contact us." style="width:100%; height:100%; object-fit: cover;"/>
@@ -27,6 +27,7 @@ html_code = f"""
 <div id="content">content</div>
 <aside id="links">
     <h1>Links</h1>
+    <!--
     <a href="https://contactus.streamlit.app">
         <li>Contact Us</li>
     </a>
@@ -36,11 +37,21 @@ html_code = f"""
     <a href="https://ramper.streamlit.app">
         <li>Back to Login</li>
     </a>
+    -->
+    <h1>Links</h1>
+    Sorry. No links available.
+    <a href=#footer>
+        <li>See why</li>
+    </a>
 </aside>
-<div id="footer">footer</div>
+<div id="superlongscroll">
+    hahaha! scroll down for 1000px!
+</div>
+<div id="footer">April Fool! Scroll up... Forever!</div>
 </div>
 <style>
 body {{
+    width: 100%;
     margin: 10px;
     text-align: center;
 }}
@@ -69,6 +80,11 @@ body {{
     height: 300px;
     border: 1px solid black;
     text-align: center;
+}}
+#superlongscroll {{
+    clear: both;
+    width: 100%;
+    height: 1000px;
 }}
 #footer {{
     clear: both;
