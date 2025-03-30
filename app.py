@@ -20,7 +20,7 @@ file_.close()
 html_code = f"""
 <div id="container">
 <div id="banner">
-    <a href="https://contactus.streamlit.app">
+    <a href="#footer">
         <img src="data:image/gif;base64,{data_url}" alt="Error showing banner(banner.gif). If you believe that this is an error, please contact us." style="width:100%; height:100%; object-fit: cover;"/>
     </a>
 </div>
