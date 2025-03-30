@@ -38,15 +38,12 @@ html_code = f"""
         <li>Back to Login</li>
     </a>
     -->
-    <h1>Links</h1>
     Sorry. No links available.
     <a href=#footer>
         <li>See why</li>
     </a>
 </aside>
-<div id="superlongscroll">
-    hahaha! scroll down for 1000px!
-</div>
+<div id="superlongscroll"></div>
 <div id="footer">April Fool! Scroll up... Forever!</div>
 </div>
 <style>
@@ -84,7 +81,7 @@ body {{
 #superlongscroll {{
     clear: both;
     width: 100%;
-    height: 1000px;
+    height: 10000px;
 }}
 #footer {{
     clear: both;
