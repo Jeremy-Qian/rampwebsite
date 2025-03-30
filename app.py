@@ -24,7 +24,17 @@ html_code = f"""
         <img src="data:image/gif;base64,{data_url}" alt="Error showing banner(banner.gif). If you believe that this is an error, please contact us." style="width:100%; height:100%; object-fit: cover;"/>
     </a>
 </div>
-<div id="content">content</div>
+<div id="content">
+    <h1>Danger! Danger!</h1>
+    <p>
+        Aliens have landed 2 miles north of the ramp, and are on its way to attack Shanghai South Station on the first day of April.
+    </p>
+    <a href="#footer">
+        <li>See More</li>
+    </a>
+    <br>
+    <br>
+</div>
 <aside id="links">
     <h1>Links</h1>
     <!--
