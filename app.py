@@ -38,21 +38,52 @@ html_code = f"""
         <br>
         <br>
     </div>
+    
+    <div id="banner">
+    <a href="#footer">
+        <img src="data:image/gif;base64,{data_url}" alt="Error showing banner(banner.gif). If you believe that this is an error, please contact us." style="width:100%; height:100%; object-fit: cover;"/>
+    </a>
+    <div id="content">
+        <h1>Danger! Danger!</h1>
+        <p>
+            Aliens have landed 2 miles north of the ramp, and are on its way to attack Shanghai South  
+            Station on the first day of April.
+        </p>
+        <a href="#footer">
+            <li>See More</li>
+        </a>
+        <br>
+        <br>
+    </div>
     <div id="links">
         <p>
             <h1>Links</h1>
         </p>
+        <!--
+        <a href="https://contactus.streamlit.app">
+            <li>Contact Us</li>
+        </a>
+        <a href="https://rampions.streamlit.app">
+            <li>Old Ramp Website</li>
+        </a>
+        <a href="https://ramper.streamlit.app">
+            <li>Back to Login</li>
+        </a>
+        -->
         <p>
-            Sorry. No links available.
+        Sorry. No links available.
         </p>
-        <a href="#footer">
+        <a href=#footer>
             <li>See why</li>
         </a>
     </div>
-    <div style="clear: both;"></div> <!-- 清除浮动 -->
-    <div id="superlongscroll"></div>
-    <div id="footer">April Fool! Scroll up... Forever!</div>
+
+        <div style="clear: both;"></div> <!-- 清除浮动 -->
+        <div id="superlongscroll"></div>
+        <div id="footer">April Fool! Scroll up... Forever!</div>
+    
 </div>
+
 <style>
 body {{
     width: 100%;
@@ -79,17 +110,7 @@ body {{
     padding: 10px;
     box-sizing: border-box; /* 确保内边距包含在元素的宽度和高度内 */
 }}
-#links {{
-    float: right;
-    width: 25%;
-    height: 300px;
-    padding: 10px;
-    background-color: #a2d9ff;  
-    border: 1px solid black; /* 确保边框样式生效 */
-    text-align: center; /* 文本居中 */
-    box-sizing: border-box; /* 确保内边距包含在元素的宽度和高度内 */
-    margin: 10px; /* 添加 margin */
-}}
+
 #superlongscroll {{
     clear: both;
     width: 100%;
