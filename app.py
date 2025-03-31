@@ -38,23 +38,6 @@ html_code = f"""
         <br>
         <br>
     </div>
-    
-    <div id="banner">
-    <a href="#footer">
-        <img src="data:image/gif;base64,{data_url}" alt="Error showing banner(banner.gif). If you believe that this is an error, please contact us." style="width:100%; height:100%; object-fit: cover;"/>
-    </a>
-    <div id="content">
-        <h1>Danger! Danger!</h1>
-        <p>
-            Aliens have landed 2 miles north of the ramp, and are on its way to attack Shanghai South  
-            Station on the first day of April.
-        </p>
-        <a href="#footer">
-            <li>See More</li>
-        </a>
-        <br>
-        <br>
-    </div>
     <div id="links">
         <p>
             <h1>Links</h1>
@@ -81,7 +64,7 @@ html_code = f"""
         <div style="clear: both;"></div> <!-- 清除浮动 -->
         <div id="superlongscroll"></div>
         <div id="footer">April Fool! Scroll up... Forever!</div>
-    
+
 </div>
 
 <style>
