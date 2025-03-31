@@ -87,7 +87,7 @@ body {{
 }}
 #links {{
     float: right;
-    width: 25%;
+    width: 20%;
     height: 300px;
     border: 1px solid black;
     text-align: center;
