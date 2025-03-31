@@ -70,12 +70,14 @@ body {{
     width: 100%;
     margin: 10px;
 }}
+<!--
 #container {{
     width: 100%;
     padding: 10px;
     box-sizing: border-box; /* 确保内边距包含在元素的宽度和高度内 */
     text-align: center;
 }}
+-->
 #banner {{
     margin-bottom: 5px;
     padding: 0px;
@@ -113,6 +115,7 @@ body {{
     padding: 10px;
     border: 1px solid black;
     text-align: center;
+    background-color: #a2d9ff;
 }}
 </style>
 """
