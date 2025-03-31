@@ -61,13 +61,11 @@ html_code = f"""
 body {{
     width: 100%;
     margin: 10px;
-    text-align: center;
 }}
 #container {{
     width: 100%;
     border: 1px solid black;
     padding: 10px;
-    text-align: left;
 }}
 #banner {{
     margin-bottom: 5px;
