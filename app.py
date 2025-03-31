@@ -63,7 +63,7 @@ html_code = f"""
     <div id="content2">
         <h1>The stories</h1>
         <a href="#footer">
-            See more ▼
+            See more ↓
         </a>
         <br>
         <br>
