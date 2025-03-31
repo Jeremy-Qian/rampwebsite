@@ -87,6 +87,7 @@ body {{
     float: right;
     width: 20%;
     height: 300px;
+    padding: 10px;
     border: 1px solid black;
     text-align: center;
 }}
