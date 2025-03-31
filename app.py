@@ -62,39 +62,11 @@ html_code = f"""
     </div>
     <div id="content2">
         <h1>The stories</h1>
-        /* "see morre" expander(april fool's trick, see more>see more>) */
-        <p>
-            <details>
-                <summary>See More</summary>
-                <p>
-                    <details>
-                        <summary>See More</summary>
-                        <p>
-                            <details>
-                                <summary>See More</summary>
-                                <p>
-                                    <details>
-                                        <summary>See More</summary>
-                                        <p>
-                                            <details>
-                                                <summary>See More</summary>
-                                                <p>
-                                                    <a href="#footer">
-                                                        /* looks like an expander, actually a link to footer */
-                                                        <details>
-                                                            <summary>See More</summary>
-                                                        </details>
-                                                    </a>
-                                                </p>
-                                            </details>
-                                        </p>
-                                    </details>
-                                </p>
-                            </details>
-                        </p>
-                    </details>
-                </p>
-            </details>
+        <a href="#footer">
+            <li>See More</li>
+        </a>
+        <br>
+        <br>
     </div>
     <div id="superlongscroll"></div>
     <div id="footer">April Fool! Scroll up... Forever!</div>
