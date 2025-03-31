@@ -82,7 +82,7 @@ body {{
     height: 300px;
     border: 1px solid black;
     text-align: left;
-    margin-right: 5px;
+    margin-left: 5px;
 }}
 #links {{
     float: right;
