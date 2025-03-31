@@ -80,7 +80,10 @@ html_code = f"""
                                                 <summary>See More</summary>
                                                 <p>
                                                     <a href="#footer">
-                                                        <summary>See More</summary>
+                                                        /* looks like an expander, actually a link to footer */
+                                                        <details>
+                                                            <summary>See More</summary>
+                                                        </details>
                                                     </a>
                                                 </p>
                                             </details>
