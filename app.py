@@ -93,6 +93,16 @@ body {{
     box-sizing: border-box; /* 确保内边距包含在元素的宽度和高度内 */
 }}
 
+#links {{
+    float: right;
+    width: 25%;
+    height: 300px;
+    border: 1px solid black;
+    text-align: left;
+    padding: 10px;
+    box-sizing: border-box; /* 确保内边距包含在元素的宽度和高度内 */
+}}
+
 #superlongscroll {{
     clear: both;
     width: 100%;
