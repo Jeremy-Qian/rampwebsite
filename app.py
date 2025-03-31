@@ -60,13 +60,23 @@ html_code = f"""
             <li>See why</li>
         </a>
     </div>
-        <div id="superlongscroll"></div>
-        <div id="footer">April Fool! Scroll up... Forever!</div>
+    <div id="content2">
+        <h1>The stories</h1>
+        /* "see morre" expander */
+        <p>
+            <details>
+                <summary>See More</summary>
+                <p>
+                    Aliens have landed 2 miles north of the ramp, and are on its way to attack Shanghai South Station on the first day of April.
+                </p>
+            </details>
+    </div>
+    <div id="superlongscroll"></div>
+    <div id="footer">April Fool! Scroll up... Forever!</div>
 
 </div>
 
 <style>
-<!--
 body {{
     width: 100%;
     margin: 10px;
@@ -78,7 +88,6 @@ body {{
     box-sizing: border-box; /* 确保内边距包含在元素的宽度和高度内 */
     text-align: center;
 }}
--->
 #banner {{
     margin-bottom: 5px;
     padding: 0px;
@@ -104,6 +113,11 @@ body {{
     text-align: left;
     padding: 10px;
     box-sizing: border-box; /* 确保内边距包含在元素的宽度和高度内 */
+}}
+#content2 {{
+    clear: both;
+    width: 100%;
+    height: 300px;
 }}
 
 #superlongscroll {{
