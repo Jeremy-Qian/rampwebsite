@@ -27,8 +27,8 @@ html_code = f"""
 <div id="content">
     <h1>Danger! Danger!</h1>
     <p>
-        Aliens have landed 2 miles north of the ramp, and are on its way to attack Shanghai South  
-        Station on the first day of April.
+          Aliens have landed 2 miles north of the ramp, and are on its way to attack Shanghai South  
+          Station on the first day of April.
     </p>
     <a href="#footer">
         <li>See More</li>
@@ -82,6 +82,7 @@ body {{
     height: 300px;
     border: 1px solid black;
     text-align: left;
+    margin-right: 5px;
 }}
 #links {{
     float: right;
