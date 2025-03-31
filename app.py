@@ -81,7 +81,7 @@ body {{
 }}
 #links {{
     float: right;
-    width: 20%;
+    width: 25%;
     height: 300px;
     padding: 10px;
     border: 1px solid black; /* 确保边框样式生效 */
