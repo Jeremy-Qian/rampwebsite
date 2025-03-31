@@ -36,7 +36,7 @@ html_code = f"""
     <br>
     <br>
 </div>
-<aside id="links">
+<div id="links">
     <h1>Links</h1>
     <!--
     <a href="https://contactus.streamlit.app">
@@ -53,7 +53,7 @@ html_code = f"""
     <a href=#footer>
         <li>See why</li>
     </a>
-</aside>
+</div>
 <div id="superlongscroll"></div>
 <div id="footer">April Fool! Scroll up... Forever!</div>
 </div>
