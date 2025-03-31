@@ -67,6 +67,7 @@ body {{
     width: 100%;
     border: 1px solid black;
     padding: 10px;
+    text-align: left;
 }}
 #banner {{
     margin-bottom: 5px;
@@ -80,6 +81,7 @@ body {{
     width: 75%;
     height: 300px;
     border: 1px solid black;
+    text-align: left;
 }}
 #links {{
     float: right;
