@@ -66,11 +66,12 @@ html_code = f"""
 </div>
 
 <style>
+<!--
 body {{
     width: 100%;
     margin: 10px;
 }}
-<!--
+
 #container {{
     width: 100%;
     padding: 10px;
