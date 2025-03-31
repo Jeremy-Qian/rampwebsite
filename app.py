@@ -115,7 +115,8 @@ body {{
     clear: both;
     width: 100%;
     height: 300px;
-    background-color: #a2d9ff;
+    text-align: left;
+    padding: 10px;
     border: 1px solid blue;
 }}
 
