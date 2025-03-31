@@ -62,12 +62,34 @@ html_code = f"""
     </div>
     <div id="content2">
         <h1>The stories</h1>
-        /* "see morre" expander */
+        /* "see morre" expander(april fool's trick, see more>see more>) */
         <p>
             <details>
                 <summary>See More</summary>
                 <p>
-                    Aliens have landed 2 miles north of the ramp, and are on its way to attack Shanghai South Station on the first day of April.
+                    <details>
+                        <summary>See More</summary>
+                        <p>
+                            <details>
+                                <summary>See More</summary>
+                                <p>
+                                    <details>
+                                        <summary>See More</summary>
+                                        <p>
+                                            <details>
+                                                <summary>See More</summary>
+                                                <p>
+                                                    <a href="#footer">
+                                                        <summary>See More</summary>
+                                                    </a>
+                                                </p>
+                                            </details>
+                                        </p>
+                                    </details>
+                                </p>
+                            </details>
+                        </p>
+                    </details>
                 </p>
             </details>
     </div>
