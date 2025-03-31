@@ -90,6 +90,7 @@ body {{
     padding: 10px;
     border: 1px solid black;
     text-align: center;
+    box-sizing: border-box; /* 确保内边距包含在元素的宽度和高度内 */
 }}
 #superlongscroll {{
     clear: both;
