@@ -60,8 +60,6 @@ html_code = f"""
             <li>See why</li>
         </a>
     </div>
-
-        <div style="clear: both;"></div> <!-- 清除浮动 -->
         <div id="superlongscroll"></div>
         <div id="footer">April Fool! Scroll up... Forever!</div>
 
@@ -76,6 +74,7 @@ body {{
     width: 100%;
     padding: 10px;
     box-sizing: border-box; /* 确保内边距包含在元素的宽度和高度内 */
+    text-align: center;
 }}
 #banner {{
     margin-bottom: 5px;
