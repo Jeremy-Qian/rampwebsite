@@ -84,7 +84,7 @@ body {{
     padding: 0px;
     background-color: #a2d9ff;
     border: 1px solid black;
-    text-align: center;
+    text-align: left;
 }}
 #content {{
     float: left;
