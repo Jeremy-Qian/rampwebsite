@@ -2,8 +2,8 @@ import streamlit as st
 import base64
 
 st.set_page_config(
-    page_title="Streamlit App",
-    page_icon=":smile:",
+    page_title="Home",
+    page_icon=":material/home:",
     layout="wide",
     initial_sidebar_state="expanded",
     menu_items={
@@ -32,9 +32,7 @@ html_code = f"""
             Aliens have landed 2 miles north of the ramp, and are on its way to attack Shanghai South  
             Station on the first day of April.
         </p>
-        <a href="#footer">
-            <li>See More</li>
-        </a>
+        
         <br>
         <br>
     </div>
@@ -62,6 +60,9 @@ html_code = f"""
     </div>
     <div id="content2">
         <h1>The stories</h1>
+        <p>
+            Once upon a time! The end! Do your homework! Empty the trash!
+        </p>
         <a href="#footer">
             See more ↓
         </a>
