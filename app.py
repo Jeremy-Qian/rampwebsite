@@ -84,8 +84,8 @@ body {{
     width: 20%;
     height: 300px;
     padding: 10px;
-    border: 1px solid black !important; /* 确保边框样式生效 */
-    text-align: center;
+    border: 1px solid black; /* 确保边框样式生效 */
+    text-align: center; /* 文本居中 */
     box-sizing: border-box; /* 确保内边距包含在元素的宽度和高度内 */
     margin: 10px; /* 添加 margin */
 }}
