@@ -94,7 +94,7 @@ body {{
 }}
 
 #links {{
-    float: right;
+    clear: both;
     width: 25%;
     height: 300px;
     border: 1px solid black;
