@@ -37,7 +37,9 @@ html_code = f"""
     <br>
 </div>
 <div id="links">
-    <h1>Links</h1>
+    <p>
+        <h1>Links</h1>
+    </p>
     <!--
     <a href="https://contactus.streamlit.app">
         <li>Contact Us</li>
@@ -49,7 +51,9 @@ html_code = f"""
         <li>Back to Login</li>
     </a>
     -->
-    Sorry. No links available.
+    <p>
+      Sorry. No links available.
+    </p>
     <a href=#footer>
         <li>See why</li>
     </a>
@@ -64,7 +68,6 @@ body {{
 }}
 #container {{
     width: 100%;
-    border: 1px solid black;
     padding: 10px;
 }}
 #banner {{
