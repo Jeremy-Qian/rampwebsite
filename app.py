@@ -14,4 +14,4 @@ st.set_page_config(
 )
 
 st.markdown(":red-badge[A big problem] This page has a BIG problem. Wait for a few days/weeks...\
-            Test new website: [Click here](pleaseusethiswebsitedirectlywithoutlogginginyouarearamper.streamlit.app)")
+            Test new website: [Click here](https://pleaseusethiswebsitedirectlywithoutlogginginyouarearamper.streamlit.app)")
