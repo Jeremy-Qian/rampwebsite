@@ -10,8 +10,10 @@ def login():
 
     # 验证用户输入的code
     if user_input_code == correct_code:
-        st.success("Correct! Now press the x button.")
+        st.success("Correct!")
         st.session_state['logged_in'] = True
+        if st.button("Continue"):
+            st.rerun()
     else:
         st.error("Password Error. Please try again.")
 if not st.session_state['logged_in']:
