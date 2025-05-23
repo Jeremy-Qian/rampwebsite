@@ -1,31 +1,20 @@
 import streamlit as st
-import base64
 
-st.set_page_config(
-    page_title="Login",
-    page_icon=":material/account_circle:",
-    layout="wide",
-    initial_sidebar_state="expanded",
-    menu_items={
-        'Get help': 'https://contactus.streamlit.app',
-        'Report a bug': "https://github.com/Jeremy-Qian/rampwebsite/issues",
-        'About': "Streamlit App"
-    }
-)
-@st.dialog("Fast Login")
-def fast_login():
-    st.markdown("#### :red[**Who invented the ramp game see you?**]")
-    st.markdown("##### :gray[Examples:]  \n:green-badge[:material/check: John]:red-badge[:material/close: John Appleseed]:red-badge[:material/close: john]:red-badge[:material/close: john appleseed]")
-    st.text_input("Enter your answer",key="fast_login")
-    if st.button("Submit"):
-        if st.session_state.fast_login == st.secrets.answer:
-            st.success("Correct!")
-            st.session_state.clear()
-            st.link_button("Continue →",url="https://pleaseusethiswebsitedirectlywithoutlogginginyouarearamper.streamlit.app")
-        else:
-            st.error("Incorrect!")
-            st.session_state.clear()
-st.title(":rainbow[Ramp Website]")
-st.markdown("##### **Fast Login :green-badge[:material/cake: New]**",help="The fast login is finally here!")
-if st.button("Question: Click to reveal"):
-    fast_login()
+# 从secrets中获取正确的code
+correct_code = st.secrets["code"]
+st.session_state['logged_in'] = False
+if not st.session_state['logged_in']:
+    # 创建密码输入框
+    user_input_code = st.text_input("请输入登录密码", type="password")
+
+    # 验证用户输入的code
+    if user_input_code == correct_code:
+        st.success("密码正确，欢迎登录！")
+        st.session_state['logged_in'] = True
+    else:
+        st.error("密码输入错误，请重新输入。")
+
+if st.session_state['logged_in']:
+    st.title("欢迎使用 Streamlit 应用")
+    st.write("这是一个受保护的页面，只有输入正确的密码才能访问。")
+    st.write("你可以在这里放置你的应用程序内容。")
