@@ -10,7 +10,7 @@ def login():
 
     # 验证用户输入的code
     if user_input_code == correct_code:
-        st.success("Correct!")
+        st.success("Correct! Press the continue button and then press the x button.")
         st.session_state['logged_in'] = True
         if st.button("Continue"):
             st.rerun()
@@ -20,6 +20,6 @@ if not st.session_state['logged_in']:
     login()
 
 if st.session_state['logged_in']:
-    st.title("欢迎使用 Streamlit 应用")
-    st.write("这是一个受保护的页面，只有输入正确的密码才能访问。")
-    st.write("你可以在这里放置你的应用程序内容。")
+    st.title("Experimental Content")
+    st.write("lalalalalal")
+    st.write("blah")
