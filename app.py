@@ -3,17 +3,17 @@ import streamlit as st
 # 从secrets中获取正确的code
 correct_code = st.secrets["code"]
 st.session_state['logged_in'] = False
-@st.dialog
+@st.dialog("Log In as Ramper")
 def login():
     # 创建密码输入框
-    user_input_code = st.text_input("请输入登录密码", type="password")
+    user_input_code = st.text_input("Enter the code shown in the Ramp Group", type="password")
 
     # 验证用户输入的code
     if user_input_code == correct_code:
-        st.success("密码正确，欢迎登录！")
+        st.success("Correct! Now press the x button.")
         st.session_state['logged_in'] = True
     else:
-        st.error("密码输入错误，请重新输入。")
+        st.error("Password Error. Please try again.")
 if not st.session_state['logged_in']:
     login()
 
