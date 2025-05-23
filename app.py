@@ -3,7 +3,8 @@ import streamlit as st
 # 从secrets中获取正确的code
 correct_code = st.secrets["code"]
 st.session_state['logged_in'] = False
-if not st.session_state['logged_in']:
+@st.dialog
+def login():
     # 创建密码输入框
     user_input_code = st.text_input("请输入登录密码", type="password")
 
@@ -13,6 +14,8 @@ if not st.session_state['logged_in']:
         st.session_state['logged_in'] = True
     else:
         st.error("密码输入错误，请重新输入。")
+if not st.session_state['logged_in']:
+    login()
 
 if st.session_state['logged_in']:
     st.title("欢迎使用 Streamlit 应用")
