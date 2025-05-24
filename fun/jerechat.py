@@ -92,8 +92,13 @@ if "messages" not in st.session_state:
     st.session_state.messages = []  
 
 for msg in st.session_state.messages:  
-    with st.chat_message(msg["role"]):  
-        st.write(msg["content"])
+    if msg["role"] == "bot":
+        with st.chat_message(msg["role"], avatar="🤖"):
+            st.write(msg["content"])
+    else:
+        with st.chat_message(msg["role"]):
+            st.write(msg["content"])
+
 
 prompt = st.chat_input("Say something...")  
 
