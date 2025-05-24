@@ -2,24 +2,45 @@ import streamlit as st
 
 # 从secrets中获取正确的code
 correct_code = st.secrets["code"]
-st.session_state['logged_in'] = False
+#st.session_state['logged_in'] = False
 @st.dialog("Log In as Ramper")
 def login():
+    with st.expander("Help"):
+        st.write("""
+        > Ramp Website  
+        > Created on July 24, 2024 by Jeremy Qian  
+        > To view the website, you have to be a rampion.  
+        -------------------------------------
+        Please enter the code shown in the [Ramp Group](https://chat.google.com) to log in.  
+        Don't worry if you see a red 'KeyError' message under this dialog, once you log in it will dissapear.  
+        The code is not case sensitive. You could enter it in upper or lower case.
+        #### :red[WARNING:]
+        Don't press the "X" button. If you do, you will fall into the error message and will have to rerun.""")
     # 创建密码输入框
-    user_input_code = st.text_input("Enter the code shown in the Ramp Group", type="password")
-
-    # 验证用户输入的code
-    if user_input_code == correct_code:
-        st.success("Correct! Press the continue button and then press the x button.")
-        st.session_state['logged_in'] = True
-        if st.button("Continue"):
+    user_input_code = st.text_input("Enter the code shown in the [Ramp Group](https://chat.google.com)", type="password")
+    # 验证用户输入的code是否正确
+    if st.button("Log In"):
+        if user_input_code.upper() == correct_code:
+            st.success("Correct! Now press the x button.")
+            st.session_state['logged_in'] = True
             st.rerun()
-    else:
-        st.error("Password Error. Please try again.")
-if not st.session_state['logged_in']:
+        else:
+            st.error("Password Error. Please try again.")
+if 'logged_in' not in st.session_state :
     login()
 
 if st.session_state['logged_in']:
     st.title("Experimental Content")
-    st.write("lalalalalal")
-    st.write("blah")
+    pages = {
+    "Rampion's Fast Fun": [
+        st.Page("fun/jerechat.py", title="JereChat"),
+        st.Page("fun/news.py", title="News"),
+    ],
+#    "Resources": [
+#        st.Page("jerechat.py", title="Learn about us"),
+#        st.Page("trial.py", title="Try it out"),
+#    ],
+    }
+
+    pg = st.navigation(pages)
+    pg.run()
