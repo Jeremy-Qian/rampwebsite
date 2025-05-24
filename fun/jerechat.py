@@ -107,5 +107,5 @@ if prompt:
     elapsed_time = second_time - first_time
     elapse_text = f":gray-badge[Thought for {elapsed_time:.2f} seconds]  \n"
     st.session_state.messages.append({"role": "bot", "content": elapse_text + bot_response})  
-    with st.chat_message("bot", avatar=st.image("icon_small.png")):  
+    with st.chat_message("bot", avatar=st.image(os.path.join(script_dir,"icon_small.png"))):  
         st.write(bot_response)
