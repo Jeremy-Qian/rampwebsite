@@ -79,13 +79,14 @@ def response(user_response):
         return robo_response
 
 def generate_response(user_input):
-    user_response=user_input.lower()
-    if(greeting(user_response)!=None):
+    global word_tokens
+    user_response = user_input.lower()
+    if greeting(user_response) is not None:
         return greeting(user_response)
     else:
         sent_tokens.append(user_response)
         word_tokens = word_tokens + split_into_words(user_response)
-        return(response(user_response))
+        return response(user_response)
 
 if "messages" not in st.session_state:  
     st.session_state.messages = []  
