@@ -28,19 +28,21 @@ def login():
             st.error("Password Error. Please try again.")
 if 'logged_in' not in st.session_state :
     login()
+try:
+    if st.session_state['logged_in']:
+        st.title("Experimental Content")
+        pages = {
+        "Rampion's Fast Fun": [
+            st.Page("fun/jerechat.py", title="JereChat"),
+            st.Page("fun/news.py", title="News"),
+        ],
+    #    "Resources": [
+    #        st.Page("jerechat.py", title="Learn about us"),
+    #        st.Page("trial.py", title="Try it out"),
+    #    ],
+        }
 
-if st.session_state['logged_in']:
-    st.title("Experimental Content")
-    pages = {
-    "Rampion's Fast Fun": [
-        st.Page("fun/jerechat.py", title="JereChat"),
-        st.Page("fun/news.py", title="News"),
-    ],
-#    "Resources": [
-#        st.Page("jerechat.py", title="Learn about us"),
-#        st.Page("trial.py", title="Try it out"),
-#    ],
-    }
-
-    pg = st.navigation(pages)
-    pg.run()
+        pg = st.navigation(pages)
+        pg.run()
+except KeyError:
+    pass
