@@ -66,30 +66,3 @@ def generate_response(user_input):
         sent_tokens.append(user_response)
         word_tokens=word_tokens+nltk.word_tokenize(user_response)
         return(response(user_response))
-        
-
-
-if __name__ == "__main__":
-    flag=True
-    print("ROBO: My name is JereChat. I will answer your queries about Chatbots. If you want to exit, type Bye!")
-    while(flag==True):
-    user_response = input()
-    user_response=user_response.lower()
-    if(user_response!='bye'):
-        if(user_response=='thanks' or user_response=='thank you' ):
-            flag=False
-            print("ROBO: You are welcome..")
-        else:
-            if(greeting(user_response)!=None):
-                print("JereChat: " + greeting(user_response))
-            else:
-                sent_tokens.append(user_response)
-                word_tokens=word_tokens+nltk.word_tokenize(user_response)
-                final_words=list(set(word_tokens))
-                print("JereChat: ",end="")
-                print(response(user_response))
-                sent_tokens.remove(user_response)
-    else:
-        flag=False
-        print("ROBO: Bye! take care..")
-
