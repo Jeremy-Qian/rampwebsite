@@ -33,7 +33,7 @@ try:
         st.title("Experimental Content")
         pages = {
         "Rampion's Fast Fun": [
-            st.Page("fun/jerechat.py", title="JereChat"),
+            st.Page("fun/jerechat.py", title="JereChat 1 Pro-dist streamlit"),
             st.Page("fun/news.py", title="News"),
         ],
     #    "Resources": [
