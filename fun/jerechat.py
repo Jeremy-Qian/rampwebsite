@@ -1,6 +1,6 @@
 import streamlit as st  
 import time  
-from jerechat import *
+from chatsupport import *
 
 st.set_page_config(page_title="Chat App", layout="wide", initial_sidebar_state="collapsed")  
 st.title("Let's Chat!")  
