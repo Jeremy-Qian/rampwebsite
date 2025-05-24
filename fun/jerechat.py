@@ -1,8 +1,6 @@
 import streamlit as st  
+st.set_page_config(page_title="Chat App", layout="wide", initial_sidebar_state="collapsed") 
 import time  
-
-
-st.set_page_config(page_title="Chat App", layout="wide", initial_sidebar_state="collapsed")  
 st.title("Let's Chat!")  
 
 import nltk
