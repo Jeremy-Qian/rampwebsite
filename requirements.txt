@@ -1,2 +1,5 @@
 streamlit
-streamlit_navigation_bar
+numpy
+pandas
+scikit-learn
+nltk
