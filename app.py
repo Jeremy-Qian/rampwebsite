@@ -30,7 +30,7 @@ try:
         login()
 
     if st.session_state['logged_in']:
-        st.title("Experimental Content")
+        st.title(":rainbow[Ramp Website]")
         pages = {
         "Home":[
             st.Page("home/ads.py", title="Ads"),
