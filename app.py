@@ -32,14 +32,13 @@ try:
     if st.session_state['logged_in']:
         st.title("Experimental Content")
         pages = {
+        "Home":[
+            st.Page("home/ads.py", title="Ads"),
+        ]
         "Rampion's Fast Fun": [
             st.Page("fun/jerechat.py", title="JereChat 1 Pro-dist streamlit"),
             st.Page("fun/news.py", title="News"),
         ],
-    #    "Resources": [
-    #        st.Page("jerechat.py", title="Learn about us"),
-    #        st.Page("trial.py", title="Try it out"),
-    #    ],
         }
 
         pg = st.navigation(pages)
