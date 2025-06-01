@@ -2,7 +2,7 @@ import streamlit as st
 st.markdown(
     """
     <style>
-    #MainMenu {
+    .stToolbar {
         visibility: hidden;
     }
     </style>
