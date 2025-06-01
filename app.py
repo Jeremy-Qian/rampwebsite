@@ -1,10 +1,10 @@
 import streamlit as st
-st.html("""
-<style>
+hide_github_icon = """
 #GithubIcon {
   visibility: hidden;
 }
-</style>""")
+"""
+st.markdown(hide_github_icon, unsafe_allow_html=True)
 try:
     # 从secrets中获取正确的code
     correct_code = st.secrets["code"]
