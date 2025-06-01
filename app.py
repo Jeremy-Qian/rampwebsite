@@ -1,4 +1,10 @@
 import streamlit as st
+st.html("""
+<style>
+#GithubIcon {
+  visibility: hidden;
+}
+</style>""")
 try:
     # 从secrets中获取正确的code
     correct_code = st.secrets["code"]
