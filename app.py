@@ -46,11 +46,11 @@ try:
         st.title(":rainbow[Ramp Website]")
         pages = {
         "Home":[
-            st.Page("home/ads.py", title="Ads"),
+            st.Page("home/ads.py", title="Ads", icon=":material/ads_click:"),
         ],
         "Rampion's Fast Fun": [
             st.Page("fun/jerechat.py", title="JereChat 1 Pro", icon=":material/robot:"),
-            st.Page("fun/news.py", title="News"),
+            st.Page("fun/news.py", title="News", icon=":material/newspaper:"),
         ],
         }
 
