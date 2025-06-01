@@ -93,7 +93,7 @@ if "messages" not in st.session_state:
 
 for msg in st.session_state.messages:  
     if msg["role"] == "bot":
-        with st.chat_message(msg["role"], avatar="🤖"):
+        with st.chat_message(msg["role"], avatar="icon_small.png"):
             st.write(msg["content"])
     else:
         with st.chat_message(msg["role"]):
