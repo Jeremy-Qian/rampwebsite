@@ -2,7 +2,7 @@ import streamlit as st
 st.markdown(
     """
     <style>
-    .stToolbar {
+    .stAppToolbar {
         visibility: hidden;
     }
     </style>
