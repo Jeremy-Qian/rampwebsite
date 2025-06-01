@@ -5,6 +5,9 @@ st.markdown(
     .stAppToolbar {
         visibility: hidden;
     }
+    .stDecoration {
+        visibility: hidden;
+    }
     </style>
     """,
     unsafe_allow_html=True
