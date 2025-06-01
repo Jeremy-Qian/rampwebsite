@@ -36,7 +36,7 @@ try:
             st.Page("home/ads.py", title="Ads"),
         ],
         "Rampion's Fast Fun": [
-            st.Page("fun/jerechat.py", title="JereChat 1 Pro-dist streamlit"),
+            st.Page("fun/jerechat.py", title="JereChat 1 Pro", icon=":material/robot:"),
             st.Page("fun/news.py", title="News"),
         ],
         }
