@@ -88,6 +88,9 @@ def generate_response(user_input):
         word_tokens = word_tokens + split_into_words(user_response)
         return response(user_response)
 
+st.write("Jeremy is working on a new project: JereChat 1.7 Ultra. Coming soon!")
+st.write("Preview:")
+st.image("gray_jerechat.png")
 if "messages" not in st.session_state:  
     st.session_state.messages = []  
 
