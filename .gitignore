@@ -1,6 +1,6 @@
 .DS_Store
 .vercel
-./vscode
-./build
-./dist
-./devcontainer
+.vscode
+build
+dist
+devcontainer

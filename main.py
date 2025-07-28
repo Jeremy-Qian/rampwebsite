@@ -23,5 +23,4 @@ pages = {
 st.title(":rainbow[The Ramp Website 2.0]")
 pg = st.navigation(pages, position="top")
 pg.run()
-choice = rm.choice([girlsclubad])
-choice()
+rm.choice([girlsclubad])()
