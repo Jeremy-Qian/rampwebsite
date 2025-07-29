@@ -16,11 +16,11 @@ pages = {
         st.Page("resources/about.py", title="About", icon=":material/info:")
     ],
     "Ramp": [
-        st.Page("groups.py", title="The Ramp Groups", icon=":material/group:")
+        st.Page("polls.py", title="Polls and Debates", icon=":material/forum:")
     ],
 }
 
 st.title(":rainbow[The Ramp Website 2.0]")
 pg = st.navigation(pages, position="top")
 pg.run()
-rm.choice([girlsclubad])()
+girlsclubad()
